@@ -23,7 +23,7 @@ namespace ProjetoIntegrador
 
         SignUpDataSetTableAdapters.Table1TableAdapter Signup = new SignUpDataSetTableAdapters.Table1TableAdapter();
 
-
+        //teste para commit
 
 
         /* Movimentar aplicativo na área de trabalho */
