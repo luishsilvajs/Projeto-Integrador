@@ -131,7 +131,7 @@ namespace ProjetoIntegrador
             try
             {
 
-                string conectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\lucas\Desktop\ProjetoIntegrador\ProjetoIntegrador\SignUp.mdf;Integrated Security=True;Connect Timeout=30";
+                string conectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\luisg\Desktop\Projetos\ProjetoIntegrador-main\ProjetoIntegrador-main\ProjetoIntegrador\SignUp.mdf;Integrated Security=True;Connect Timeout=30";
                 SqlConnection con = new SqlConnection(conectionString);
                 con.Open();
 

@@ -23,3 +23,4 @@ C:\Users\luisg\Desktop\Projetos\ProjetoIntegrador-main\ProjetoIntegrador-main\Pr
 C:\Users\luisg\Desktop\Projetos\ProjetoIntegrador-main\ProjetoIntegrador-main\ProjetoIntegrador\ProjetoIntegrador\obj\Debug\ProjetoIntegrador.csproj.CopyComplete
 C:\Users\luisg\Desktop\Projetos\ProjetoIntegrador-main\ProjetoIntegrador-main\ProjetoIntegrador\ProjetoIntegrador\obj\Debug\ProjetoIntegrador.exe
 C:\Users\luisg\Desktop\Projetos\ProjetoIntegrador-main\ProjetoIntegrador-main\ProjetoIntegrador\ProjetoIntegrador\obj\Debug\ProjetoIntegrador.pdb
+C:\Users\luisg\Desktop\Projetos\ProjetoIntegrador-main\ProjetoIntegrador-main\ProjetoIntegrador\ProjetoIntegrador\bin\Debug\ProjetoIntegrador.pdb

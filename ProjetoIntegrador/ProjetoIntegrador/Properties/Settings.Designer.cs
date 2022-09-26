@@ -45,5 +45,17 @@ namespace ProjetoIntegrador.Properties {
                 return ((string)(this["SignUpConnectionString1"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\luisg\\Desktop\\Projet" +
+            "os\\ProjetoIntegrador-main\\ProjetoIntegrador-main\\ProjetoIntegrador\\SignUp.mdf;In" +
+            "tegrated Security=True;Connect Timeout=30")]
+        public string SignUpConnectionString2 {
+            get {
+                return ((string)(this["SignUpConnectionString2"]));
+            }
+        }
     }
 }

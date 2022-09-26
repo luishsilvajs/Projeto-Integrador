@@ -279,13 +279,13 @@ namespace ProjetoIntegrador {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class Table1DataTable : global::System.Data.TypedTableBase<Table1Row> {
             
+            private global::System.Data.DataColumn columnCPF;
+            
             private global::System.Data.DataColumn columnNome;
             
             private global::System.Data.DataColumn columnEmail;
             
             private global::System.Data.DataColumn columnSenha;
-            
-            private global::System.Data.DataColumn columnCPF;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -322,6 +322,14 @@ namespace ProjetoIntegrador {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn CPFColumn {
+                get {
+                    return this.columnCPF;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public global::System.Data.DataColumn NomeColumn {
                 get {
                     return this.columnNome;
@@ -341,14 +349,6 @@ namespace ProjetoIntegrador {
             public global::System.Data.DataColumn SenhaColumn {
                 get {
                     return this.columnSenha;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn CPFColumn {
-                get {
-                    return this.columnCPF;
                 }
             }
             
@@ -389,13 +389,13 @@ namespace ProjetoIntegrador {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public Table1Row AddTable1Row(string Nome, string Email, string Senha, string CPF) {
+            public Table1Row AddTable1Row(string CPF, string Nome, string Email, string Senha) {
                 Table1Row rowTable1Row = ((Table1Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
+                        CPF,
                         Nome,
                         Email,
-                        Senha,
-                        CPF};
+                        Senha};
                 rowTable1Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowTable1Row);
                 return rowTable1Row;
@@ -425,34 +425,34 @@ namespace ProjetoIntegrador {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
+                this.columnCPF = base.Columns["CPF"];
                 this.columnNome = base.Columns["Nome"];
                 this.columnEmail = base.Columns["Email"];
                 this.columnSenha = base.Columns["Senha"];
-                this.columnCPF = base.Columns["CPF"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
+                this.columnCPF = new global::System.Data.DataColumn("CPF", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCPF);
                 this.columnNome = new global::System.Data.DataColumn("Nome", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNome);
                 this.columnEmail = new global::System.Data.DataColumn("Email", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEmail);
                 this.columnSenha = new global::System.Data.DataColumn("Senha", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSenha);
-                this.columnCPF = new global::System.Data.DataColumn("CPF", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCPF);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnCPF}, true));
+                this.columnCPF.AllowDBNull = false;
+                this.columnCPF.Unique = true;
+                this.columnCPF.MaxLength = 15;
                 this.columnNome.AllowDBNull = false;
                 this.columnNome.MaxLength = 100;
                 this.columnEmail.AllowDBNull = false;
                 this.columnEmail.MaxLength = 100;
                 this.columnSenha.AllowDBNull = false;
                 this.columnSenha.MaxLength = 10;
-                this.columnCPF.AllowDBNull = false;
-                this.columnCPF.Unique = true;
-                this.columnCPF.MaxLength = 15;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -595,6 +595,17 @@ namespace ProjetoIntegrador {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string CPF {
+                get {
+                    return ((string)(this[this.tableTable1.CPFColumn]));
+                }
+                set {
+                    this[this.tableTable1.CPFColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string Nome {
                 get {
                     return ((string)(this[this.tableTable1.NomeColumn]));
@@ -623,17 +634,6 @@ namespace ProjetoIntegrador {
                 }
                 set {
                     this[this.tableTable1.SenhaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string CPF {
-                get {
-                    return ((string)(this[this.tableTable1.CPFColumn]));
-                }
-                set {
-                    this[this.tableTable1.CPFColumn] = value;
                 }
             }
         }
@@ -797,49 +797,50 @@ namespace ProjetoIntegrador.SignUpDataSetTableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "Table1";
+            tableMapping.ColumnMappings.Add("CPF", "CPF");
             tableMapping.ColumnMappings.Add("Nome", "Nome");
             tableMapping.ColumnMappings.Add("Email", "Email");
             tableMapping.ColumnMappings.Add("Senha", "Senha");
-            tableMapping.ColumnMappings.Add("CPF", "CPF");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Table1] WHERE (([Nome] = @Original_Nome) AND ([Email] = @Original_Em" +
-                "ail) AND ([Senha] = @Original_Senha) AND ([CPF] = @Original_CPF))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Table1] WHERE (([CPF] = @Original_CPF) AND ([Nome] = @Original" +
+                "_Nome) AND ([Email] = @Original_Email) AND ([Senha] = @Original_Senha))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CPF", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CPF", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nome", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nome", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Email", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Senha", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Senha", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CPF", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CPF", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [Table1] ([Nome], [Email], [Senha], [CPF]) VALUES (@Nome, @Email, @Se" +
-                "nha, @CPF);\r\nSELECT Nome, Email, Senha, CPF FROM Table1 WHERE (CPF = @CPF)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Table1] ([CPF], [Nome], [Email], [Senha]) VALUES (@CPF, @Nome," +
+                " @Email, @Senha);\r\nSELECT CPF, Nome, Email, Senha FROM Table1 WHERE (CPF = @CPF)" +
+                "";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CPF", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CPF", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nome", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nome", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Email", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Senha", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Senha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CPF", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CPF", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [Table1] SET [Nome] = @Nome, [Email] = @Email, [Senha] = @Senha, [CPF] = @CPF WHERE (([Nome] = @Original_Nome) AND ([Email] = @Original_Email) AND ([Senha] = @Original_Senha) AND ([CPF] = @Original_CPF));
-SELECT Nome, Email, Senha, CPF FROM Table1 WHERE (CPF = @CPF)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Table1] SET [CPF] = @CPF, [Nome] = @Nome, [Email] = @Email, [Senha] = @Senha WHERE (([CPF] = @Original_CPF) AND ([Nome] = @Original_Nome) AND ([Email] = @Original_Email) AND ([Senha] = @Original_Senha));
+SELECT CPF, Nome, Email, Senha FROM Table1 WHERE (CPF = @CPF)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CPF", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CPF", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nome", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nome", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Email", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Senha", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Senha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CPF", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CPF", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CPF", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CPF", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nome", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nome", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Email", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Senha", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Senha", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CPF", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CPF", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ProjetoIntegrador.Properties.Settings.Default.SignUpConnectionString1;
+            this._connection.ConnectionString = global::ProjetoIntegrador.Properties.Settings.Default.SignUpConnectionString2;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -848,7 +849,7 @@ SELECT Nome, Email, Senha, CPF FROM Table1 WHERE (CPF = @CPF)";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[6];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Nome, Email, Senha, CPF FROM Table1";
+            this._commandCollection[0].CommandText = "SELECT CPF, Nome, Email, Senha FROM dbo.Table1";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
@@ -993,30 +994,30 @@ SELECT Nome, Email, Senha, CPF FROM Table1 WHERE (CPF = @CPF)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string Original_Nome, string Original_Email, string Original_Senha, string Original_CPF) {
+        public virtual int Delete(string Original_CPF, string Original_Nome, string Original_Email, string Original_Senha) {
+            if ((Original_CPF == null)) {
+                throw new global::System.ArgumentNullException("Original_CPF");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[0].Value = ((string)(Original_CPF));
+            }
             if ((Original_Nome == null)) {
                 throw new global::System.ArgumentNullException("Original_Nome");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[0].Value = ((string)(Original_Nome));
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_Nome));
             }
             if ((Original_Email == null)) {
                 throw new global::System.ArgumentNullException("Original_Email");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_Email));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Email));
             }
             if ((Original_Senha == null)) {
                 throw new global::System.ArgumentNullException("Original_Senha");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Senha));
-            }
-            if ((Original_CPF == null)) {
-                throw new global::System.ArgumentNullException("Original_CPF");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_CPF));
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_Senha));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1038,30 +1039,30 @@ SELECT Nome, Email, Senha, CPF FROM Table1 WHERE (CPF = @CPF)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Nome, string Email, string Senha, string CPF) {
+        public virtual int Insert(string CPF, string Nome, string Email, string Senha) {
+            if ((CPF == null)) {
+                throw new global::System.ArgumentNullException("CPF");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(CPF));
+            }
             if ((Nome == null)) {
                 throw new global::System.ArgumentNullException("Nome");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Nome));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Nome));
             }
             if ((Email == null)) {
                 throw new global::System.ArgumentNullException("Email");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Email));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Email));
             }
             if ((Senha == null)) {
                 throw new global::System.ArgumentNullException("Senha");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Senha));
-            }
-            if ((CPF == null)) {
-                throw new global::System.ArgumentNullException("CPF");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(CPF));
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Senha));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1083,54 +1084,54 @@ SELECT Nome, Email, Senha, CPF FROM Table1 WHERE (CPF = @CPF)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Nome, string Email, string Senha, string CPF, string Original_Nome, string Original_Email, string Original_Senha, string Original_CPF) {
+        public virtual int Update(string CPF, string Nome, string Email, string Senha, string Original_CPF, string Original_Nome, string Original_Email, string Original_Senha) {
+            if ((CPF == null)) {
+                throw new global::System.ArgumentNullException("CPF");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(CPF));
+            }
             if ((Nome == null)) {
                 throw new global::System.ArgumentNullException("Nome");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Nome));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Nome));
             }
             if ((Email == null)) {
                 throw new global::System.ArgumentNullException("Email");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Email));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Email));
             }
             if ((Senha == null)) {
                 throw new global::System.ArgumentNullException("Senha");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Senha));
-            }
-            if ((CPF == null)) {
-                throw new global::System.ArgumentNullException("CPF");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(CPF));
-            }
-            if ((Original_Nome == null)) {
-                throw new global::System.ArgumentNullException("Original_Nome");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_Nome));
-            }
-            if ((Original_Email == null)) {
-                throw new global::System.ArgumentNullException("Original_Email");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_Email));
-            }
-            if ((Original_Senha == null)) {
-                throw new global::System.ArgumentNullException("Original_Senha");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_Senha));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Senha));
             }
             if ((Original_CPF == null)) {
                 throw new global::System.ArgumentNullException("Original_CPF");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_CPF));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_CPF));
+            }
+            if ((Original_Nome == null)) {
+                throw new global::System.ArgumentNullException("Original_Nome");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_Nome));
+            }
+            if ((Original_Email == null)) {
+                throw new global::System.ArgumentNullException("Original_Email");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_Email));
+            }
+            if ((Original_Senha == null)) {
+                throw new global::System.ArgumentNullException("Original_Senha");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_Senha));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1152,8 +1153,8 @@ SELECT Nome, Email, Senha, CPF FROM Table1 WHERE (CPF = @CPF)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Nome, string Email, string Senha, string Original_Nome, string Original_Email, string Original_Senha, string Original_CPF) {
-            return this.Update(Nome, Email, Senha, Original_CPF, Original_Nome, Original_Email, Original_Senha, Original_CPF);
+        public virtual int Update(string Nome, string Email, string Senha, string Original_CPF, string Original_Nome, string Original_Email, string Original_Senha) {
+            return this.Update(Original_CPF, Nome, Email, Senha, Original_CPF, Original_Nome, Original_Email, Original_Senha);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
